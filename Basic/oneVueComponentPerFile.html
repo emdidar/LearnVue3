@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One Vue Component Per File</title>
+  <script src="https://unpkg.com/vue@3"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html,body{
+      height: 100%;
+    }
+    #app{
+      display: grid;
+      place-items: center;
+    }
+  </style>
+</head>
+
+<body class="h-full grid place-items-cente">
+  <div id="app">
+    <header class="mb-2">
+      <li><a href="index.html">Home</a></li>
+    </header>
+
+    <section>
+      <app-button>Submit</app-button>
+      <app-button>Click Me</app-button>
+    </section>
+  </div>
+
+  <script type="module"> 
+    import CommonButton from "./js/components/CommonButton.js";
+    const app = {
+      components: {
+        'app-button': CommonButton
+      }
+    };
+    
+    Vue.createApp(app).mount('#app');
+  </script>
+</body>
+</html>
