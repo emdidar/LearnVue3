@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List Conditionals Computed Properties</title>
+  <script src="https://unpkg.com/vue@3"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html,body{
+      height: 100%;
+    }
+    #app{
+      display: grid;
+      place-items: center;
+    }
+  </style>
+</head>
+<body class="h-full grid place-items-center">
+  <div id="app">
+    <header class="mb-2">
+      <li><a href="index.html">Home</a></li>
+    </header>
+
+    <section>
+      <app-button>Submit</app-button>
+      <app-button>Click Me</app-button>
+    </section>
+  </div>
+
+  <script>
+    const app = {
+      components: {
+        'app-button': {
+          template: `
+            <button class="bg-gray-200 hover:bg-gray-400 rounded px-5 py-2 m-2 disabled:cursor-not-allowed" :disabled="processing">
+              <slot/>
+            </button>
+          `,
+          data() {
+            return {
+              processing: true 
+            };
+          },
+        }
+      }
+    };
+    
+    Vue.createApp(app).mount('#app');
+  </script>
+</body>
+</html>
