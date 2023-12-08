@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <script src="https://unpkg.com/vue@3"></script>
+  <style>
+    html,body{
+      height: 100%;
+    }
+    #app{
+      display: grid;
+      place-items: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <header>
+      <li><a href="../index.html">Index</a></li>
+      <li><a href="Basic/index.html">Home</a></li>
+      <li><a href="Basic/basic.html">Basic</a></li>
+      <li><a href="Basic/attributeBindingBasicEvent.html">Attribute Binding & Basic Event</a></li>
+      <li><a href="Basic/listConditionalsComputedProperties.html">List Conditionals Computed Properties</a></li>
+      <li><a href="Basic/yourFirstCustomVueComponent.html">Your First Custom Vue Component</a></li>
+      <li><a href="Basic/oneVueComponentPerFile.html">One Vue Component Per File</a></li>
+      <li><a href="Basic/componentProps.html">Component Props</a></li>
+      <li><a href="Basic/bringItAllTogether.html">Bring it All Together</a></li>
+    </header>
+  </div>
+  
+  <script>
+    Vue.createApp({
+      data(){
+        return{
+          greeting: 'Hello World'
+        };
+      }
+    }).mount('#app');
+  </script>
+</body>
+</html>
