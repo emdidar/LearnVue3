@@ -1,5 +1,5 @@
-export default{
-  template: `
+export default {
+	template: `
     <li>
       <label class="p-2 flex justify-between items-center">
         {{ assignment.name }}
@@ -8,8 +8,8 @@ export default{
     </li>
   `,
 
-  props:{
-    assignment: Object
-  }
+	props: {
+		assignment: Object
+	}
 
 }

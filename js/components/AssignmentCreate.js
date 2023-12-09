@@ -1,5 +1,5 @@
-export default{
-  template: `
+export default {
+	template: `
     <form @submit.prevent="add">
       <div class="border border-gray-600 text-black">
         <input v-model="newAssignment" placeholder="New assignment..." class="p-2">
@@ -8,16 +8,16 @@ export default{
     </form>
   `,
 
-  data(){
-    return{
-      newAssignment:''
-    }
-  },
+	data() {
+		return {
+			newAssignment: ''
+		}
+	},
 
-  methods: {
-    add(){
-      this.$emit('add', this.newAssignment);
-      this.newAssignment='';
-    }
-  },
+	methods: {
+		add() {
+			this.$emit('add', this.newAssignment);
+			this.newAssignment = '';
+		}
+	},
 }
