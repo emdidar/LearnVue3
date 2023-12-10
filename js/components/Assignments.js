@@ -9,7 +9,7 @@ export default {
 	},
 
 	template: `
-    <section class="space-y-6">
+    <section class="flex gap-8">
       <assignment-list :assignments="filter.inProgress" title="In Progress"></assignment-list>
       <assignment-list :assignments="filter.completed" title="Completed"></assignment-list>
 
@@ -20,14 +20,9 @@ export default {
 	data() {
 		return {
 			assignments: [
-				{ name: 'Design Template', complete: false, id: 1, tag: 'science' },
-				{ name: 'Finish project', complete: false, id: 2, tag: 'science' },
-				{ name: 'Read chapter 4', complete: false, id: 3, tag: 'reading' },
-				{ name: 'Turn in homework', complete: false, id: 4, tag: 'math' }
 			],
 		};
 	},
-
 
 	computed: {
 		/* inProgress(){return this.assignments.filter(assignment=>!assignment.complete)},
@@ -38,6 +33,14 @@ export default {
 				completed: this.assignments.filter(assignment => assignment.complete)
 			};
 		}
+	},
+
+	created(){
+		fetch('http://localhost:3001/assignments')
+		.then(response=>response.json())
+		.then(assignments=>{
+			this.assignments=assignments;
+		});
 	},
 
 	methods: {
