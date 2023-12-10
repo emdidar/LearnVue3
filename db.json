@@ -1,0 +1,28 @@
+{
+  "assignments": [
+    {
+      "name": "Design Template",
+      "complete": false,
+      "id": 1,
+      "tag": "science"
+    },
+    {
+      "name": "Finish project",
+      "complete": false,
+      "id": 2,
+      "tag": "science"
+    },
+    {
+      "name": "Read chapter 4",
+      "complete": false,
+      "id": 3,
+      "tag": "reading"
+    },
+    {
+      "name": "Turn in homework",
+      "complete": true,
+      "id": 4,
+      "tag": "math"
+    }
+  ]
+}
